@@ -2,3 +2,9 @@ https://doesitmutate.xyz/
 https://rxmarbles.com
 https://rxjs.dev
 https://ngrx.io/guide/effects
+https://angular.schule/blog/2020-01-ngrx-data-views
+
+https://ngrx.io/guide/store/testing
+https://rxjs.dev/guide/testing/marble-testing
+https://medium.com/angular-in-depth/how-i-test-my-ngrx-selectors-c50b1dc556bc
+

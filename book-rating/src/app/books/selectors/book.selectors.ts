@@ -16,3 +16,19 @@ export const getBooks = createSelector(
   selectBookState,
   bookSelectors.selectAll
 );
+
+export const getBooksEntities = createSelector(
+  selectBookState,
+  bookSelectors.selectEntities
+);
+
+export const getSelectedIsbn = createSelector(
+  selectBookState,
+  state => state.selectedIsbn
+);
+
+export const getSelectedBook = createSelector(
+  getBooksEntities,
+  getSelectedIsbn,
+  (entities, isbn) => entities[isbn]
+);

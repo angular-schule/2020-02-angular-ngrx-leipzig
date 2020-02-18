@@ -5,6 +5,9 @@ import { map, switchMap } from 'rxjs/operators';
 
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
+import { Store, select } from '@ngrx/store';
+import { selectBook } from '../actions/book.actions';
+import { getSelectedBook } from '../selectors/book.selectors';
 
 @Component({
   selector: 'br-book-details',
@@ -13,16 +16,14 @@ import { Book } from '../shared/book';
 })
 export class BookDetailsComponent implements OnInit {
 
-  book$: Observable<Book>;
+  book$ = this.store.pipe(select(getSelectedBook));
 
-  constructor(private route: ActivatedRoute, private bs: BookStoreService) { }
+  constructor(private route: ActivatedRoute, private store: Store) { }
 
   ngOnInit() {
-
-    this.book$ = this.route.paramMap.pipe(
+    this.route.paramMap.pipe(
       map(paramMap => paramMap.get('isbn')),
-      switchMap(isbn => this.bs.getSingle(isbn))
-    );
+    ).subscribe(isbn => this.store.dispatch(selectBook({ isbn })));
 
   }
 
