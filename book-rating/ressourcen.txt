@@ -1,3 +1,4 @@
 https://doesitmutate.xyz/
 https://rxmarbles.com
 https://rxjs.dev
+https://ngrx.io/guide/effects
