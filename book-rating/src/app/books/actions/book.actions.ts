@@ -27,3 +27,13 @@ export const createBookSuccess = createAction(
   '[Book] Create Book Success',
   props<{ book: Book }>()
 );
+
+export const rateUp = createAction(
+  '[Book] Rate Up',
+  props<{ book: Book }>()
+);
+
+export const rateDown = createAction(
+  '[Book] Rate Down',
+  props<{ book: Book }>()
+);

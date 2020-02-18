@@ -5,6 +5,8 @@ export const selectBookState = createFeatureSelector<fromBook.State>(
   fromBook.bookFeatureKey
 );
 
+const bookSelectors = fromBook.bookAdapter.getSelectors();
+
 export const getLoading = createSelector(
   selectBookState,
   state => state.loading
@@ -12,5 +14,5 @@ export const getLoading = createSelector(
 
 export const getBooks = createSelector(
   selectBookState,
-  state => state.books
+  bookSelectors.selectAll
 );
