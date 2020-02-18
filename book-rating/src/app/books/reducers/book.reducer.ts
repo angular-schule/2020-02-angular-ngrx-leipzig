@@ -2,12 +2,14 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import * as BookActions from '../actions/book.actions';
 import { Book } from '../shared/book';
+import { HttpErrorResponse } from '@angular/common/http';
 
 export const bookFeatureKey = 'book';
 
 export interface State extends EntityState<Book> {
   loading: boolean;
   selectedIsbn: string;
+  error: HttpErrorResponse;
 }
 
 export const bookAdapter = createEntityAdapter<Book>({
@@ -16,7 +18,8 @@ export const bookAdapter = createEntityAdapter<Book>({
 
 export const initialState: State = bookAdapter.getInitialState({
   loading: false,
-  selectedIsbn: null
+  selectedIsbn: null,
+  error: null
 });
 
 const bookReducer = createReducer(

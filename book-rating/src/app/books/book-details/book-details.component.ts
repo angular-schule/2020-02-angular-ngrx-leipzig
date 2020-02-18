@@ -7,7 +7,7 @@ import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 import { Store, select } from '@ngrx/store';
 import { selectBook } from '../actions/book.actions';
-import { getSelectedBook } from '../selectors/book.selectors';
+import { getSelectedBook, getSingleBook } from '../selectors/book.selectors';
 
 @Component({
   selector: 'br-book-details',
@@ -17,6 +17,7 @@ import { getSelectedBook } from '../selectors/book.selectors';
 export class BookDetailsComponent implements OnInit {
 
   book$ = this.store.pipe(select(getSelectedBook));
+  bookFoo$ = this.store.pipe(select(getSingleBook, { isbn: '123' }));
 
   constructor(private route: ActivatedRoute, private store: Store) { }
 

@@ -29,6 +29,24 @@ export const getSelectedIsbn = createSelector(
 
 export const getSelectedBook = createSelector(
   getBooksEntities,
-  getSelectedIsbn,
+  getSelectedIsbn, // TODO: hier RouterSelector verwenden
   (entities, isbn) => entities[isbn]
 );
+
+
+export const getSingleBook = createSelector(
+  getBooksEntities,
+  (entities, props) => {
+    const { isbn } = props;
+    return entities[isbn];
+  }
+);
+
+export const gsbFact = (isbn: string) => {
+  return createSelector(
+    getBooksEntities,
+    (entities) => {
+      return entities[isbn];
+    }
+  );
+}
