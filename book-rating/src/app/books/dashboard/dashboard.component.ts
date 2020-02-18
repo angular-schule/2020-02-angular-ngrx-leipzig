@@ -6,6 +6,7 @@ import { of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { loadBooks, rateUp, rateDown } from '../actions/book.actions';
 import { getLoading, getBooks } from '../selectors/book.selectors';
+import { BookFacadeService } from '../book-facade.service';
 
 @Component({
   selector: 'br-dashboard',
@@ -16,16 +17,15 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
   loading$ = this.store.pipe(select(getLoading));
-  books$ = this.store.pipe(select(getBooks));
+  books$ = this.bookFacade.getBooks();
 
-  constructor(private bs: BookStoreService, private store: Store) { }
+  constructor(private bookFacade: BookFacadeService, private bs: BookStoreService, private store: Store) { }
 
   ngOnInit() {
-    this.store.dispatch(loadBooks());
   }
 
   rateUp(book: Book) {
-    this.store.dispatch(rateUp({ book }))
+    this.bookFacade.rateUp(book);
   }
 
   rateDown(book: Book) {

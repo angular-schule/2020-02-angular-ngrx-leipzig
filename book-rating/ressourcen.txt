@@ -9,3 +9,6 @@ https://rxjs.dev/guide/testing/marble-testing
 https://medium.com/angular-in-depth/how-i-test-my-ngrx-selectors-c50b1dc556bc
 https://ngrx.io/guide/data
 https://ngrx.io/guide/store/configuration/runtime-checks
+https://github.com/intershop/intershop-pwa
+https://medium.com/@thomasburlesonIA/ngrx-facades-better-state-management-82a04b9a1e39
+https://www.youtube.com/watch?v=h-F5uYM69a4
