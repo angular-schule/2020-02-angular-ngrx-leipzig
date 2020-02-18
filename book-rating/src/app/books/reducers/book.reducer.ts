@@ -39,6 +39,13 @@ const bookReducer = createReducer(
     }
   }),
 
+  on(BookActions.createBookSuccess, (state, action) => {
+    return {
+      ...state,
+      books: [...state.books, action.book]
+    };
+  })
+
 );
 
 export function reducer(state: State | undefined, action: Action) {

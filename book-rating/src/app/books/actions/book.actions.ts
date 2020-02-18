@@ -16,3 +16,14 @@ export const loadBooksFailure = createAction(
   '[Book] Load Books Failure',
   props<{ error: HttpErrorResponse }>()
 );
+
+
+export const createBook = createAction(
+  '[Book] Create Book',
+  props<{ book: Book }>()
+);
+
+export const createBookSuccess = createAction(
+  '[Book] Create Book Success',
+  props<{ book: Book }>()
+);
