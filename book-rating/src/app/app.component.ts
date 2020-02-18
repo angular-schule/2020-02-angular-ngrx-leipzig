@@ -35,7 +35,5 @@ export class AppComponent {
 
     // result$.subscribe(console.log);
 
-
-
   }
 }

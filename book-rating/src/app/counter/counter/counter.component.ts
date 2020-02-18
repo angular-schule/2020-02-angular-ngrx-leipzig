@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { StateService } from '../state.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'br-counter',
@@ -9,20 +10,20 @@ import { StateService } from '../state.service';
 })
 export class CounterComponent {
 
-  counter$ = this.service.state$;
+  counter$ = this.service.state$.pipe(map(state => state.counter));
 
   constructor(private service: StateService) { }
 
   increment() {
-    this.service.dispatch(1);
+    this.service.dispatch('INC');
   }
 
   decrement() {
-    this.service.dispatch(-1);
+    this.service.dispatch('DEC');
   }
 
   reset() {
-    // TODO
+    this.service.dispatch('RESET');
   }
 
 }
