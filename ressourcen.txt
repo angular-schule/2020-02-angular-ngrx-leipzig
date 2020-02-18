@@ -3,6 +3,7 @@ https://rxmarbles.com
 https://rxjs.dev
 https://ngrx.io/guide/effects
 https://angular.schule/blog/2020-01-ngrx-data-views
+https://stackblitz.com/edit/angular-buch-ngfor-trackby?file=src%2Fapp%2Fapp.component.ts
 
 https://ngrx.io/guide/store/testing
 https://rxjs.dev/guide/testing/marble-testing
@@ -12,3 +13,5 @@ https://ngrx.io/guide/store/configuration/runtime-checks
 https://github.com/intershop/intershop-pwa
 https://medium.com/@thomasburlesonIA/ngrx-facades-better-state-management-82a04b9a1e39
 https://www.youtube.com/watch?v=h-F5uYM69a4
+
+https://medium.com/angular-in-depth/sharing-data-between-modules-is-peanuts-3f40fcb38dd
